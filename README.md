@@ -23,7 +23,9 @@ docker compose up --build -d
 Поднимутся 3 контейнера:
 
 frontend	http://localhost:5173	    React (Vite) — интерфейс
+
 backend	    http://localhost:8000	    Laravel — REST API
+
 database	— (только внутри Docker)	MariaDB
 
 После запуска откройте в браузере: http://localhost:5173
