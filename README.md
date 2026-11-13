@@ -2,7 +2,9 @@
 
 Технологии:
 Frontend - React (HTML/CSS/Javascript)
+
 Backend - PHP 8+/Laravel/Eloquent
+
 Database - MariaDB
 
 ## Запуск приложения
