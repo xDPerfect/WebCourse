@@ -19,7 +19,7 @@ Database - MariaDB
 
 ### Сборка и запуск
 
-Из папки проекта, где лежит `docker-compose.yaml`:
+Из папки проекта, где лежит `docker-compose.yaml`, выполните команду:
 
 docker compose up --build -d
 
