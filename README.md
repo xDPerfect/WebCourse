@@ -31,7 +31,6 @@ backend	- http://localhost:8000 - Laravel — REST API
 
 database - (только внутри Docker) MariaDB
 
-
 После запуска откройте в браузере: http://localhost:5173
 
 ## Примечания
