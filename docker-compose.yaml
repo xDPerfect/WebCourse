@@ -1,0 +1,39 @@
+services:
+  database:
+    image: mariadb:13.0
+    environment:
+      MARIADB_DATABASE: course
+      MARIADB_USER: course
+      MARIADB_PASSWORD: secret
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      retries: 10
+
+  backend:
+    build: ./Backend
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      APP_KEY: ${APP_KEY:-base64:E4bbDxeOuKjuw9s2NM95lYWIRqVGFK1tiePwfIKSeHU=}
+      APP_DEBUG: ${APP_DEBUG:-true}
+      DB_CONNECTION: mariadb
+      DB_HOST: database
+      DB_PORT: "3306"
+      DB_DATABASE: course
+      DB_USERNAME: course
+      DB_PASSWORD: secret
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "5173:5173"
+
+volumes:
+  db_data:
