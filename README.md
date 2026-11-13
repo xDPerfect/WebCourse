@@ -23,7 +23,9 @@ docker compose up --build -d
 Поднимутся 3 контейнера:
 
 frontend - http://localhost:5173 - React (Vite) — интерфейс
+
 backend	- http://localhost:8000 - Laravel — REST API
+
 database - (только внутри Docker) MariaDB
 
 После запуска откройте в браузере: http://localhost:5173
@@ -31,5 +33,7 @@ database - (только внутри Docker) MariaDB
 ## Примечания
 
 При первом запуске база пустая: справочники созданы автоматически, задачи, категории и теги добавляются через интерфейс.
+
 Если порты 5173 или 8000 уже заняты — измените их в docker-compose.yaml в секциях ports.
+
 Не используйте docker compose down -v — эта команда удаляет данные базы.
