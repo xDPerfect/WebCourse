@@ -56,5 +56,6 @@
 }
 
 .task-completed {
-  border-color: #22c55e;
+  /* border-color: #22c55e; */
+  border: 3px solid #22c55e;
 }
