@@ -19,7 +19,7 @@ services:
       database:
         condition: service_healthy
     environment:
-      APP_KEY: ${APP_KEY:-base64:E4bbDxeOuKjuw9s2NM95lYWIRqVGFK1tiePwfIKSeHU=}
+      APP_KEY: ${APP_KEY:-base64:qUWtPPJ9SQAOWKBuhBz0QDYcybUh74qqomo6vhsUoT4=}
       APP_DEBUG: ${APP_DEBUG:-true}
       DB_CONNECTION: mariadb
       DB_HOST: database
