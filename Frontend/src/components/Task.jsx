@@ -47,7 +47,9 @@ export default function Task({ task, onEdit, onDelete }) {
 
       <div className="task-dates">
         <span>Создана: {formatDate(task.created_at)}</span>
-        {formatDate(task.updated_at) && <span>Изменена: {formatDate(task.updated_at)}</span>}
+        {task.updated_at !== task.created_at && (
+          <span>Изменена: {formatDate(task.updated_at)}</span>
+        )}
         {formatDate(task.finished_at) && <span>Выполнена: {formatDate(task.finished_at)}</span>}
       </div>
 
